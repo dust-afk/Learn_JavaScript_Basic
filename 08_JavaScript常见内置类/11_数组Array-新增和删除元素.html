@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var names = ["abc", "cba", "nba", "mba", "abcd"]
+    //在数组的尾部添加和删除元素
+    //push方法
+    // names.push("why", "Kobe")
+    // console.log(names)
+    // //pop方法
+    // names.pop()
+    // names.pop()
+    // console.log(names)
+
+
+    //数组头部添加和删除元素
+    //unshift方法
+    // names.unshift("why", "kobe")
+    // console.log(names)
+
+    // //shift方法
+    // names.shift()
+    // console.log(names)
+
+    //3.在任意位置添加替换删除元素
+    //参数一:start,从什么位置开始操作
+    //参数二:deleteCount,删除元素个数
+
+    //3.1删除元素
+    // names.splice(1, 2)
+
+    //3.2新增元素
+    //deleteCount = 0,后面可以添加新的元素
+    // names.splice(1, 0, "why", "kobe")
+    // console.log(names)
+
+    //3.3替换元素
+    names.splice(1, 2, "why", "kobe", "james")
+    console.log(names )
+
+  </script>
+</body>
+</html>

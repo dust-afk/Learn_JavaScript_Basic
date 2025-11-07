@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+
+    span {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+      <span class="btn">
+        <button>按钮</button>
+      </span>
+  </div>
+
+  <script>
+    var divEl = document.querySelector("div")
+    var btnEl = document.querySelector(".btn")
+
+    btnEl.onclick = function() {
+      console.log("按钮发生了点击")
+    }
+
+    divEl.onclick = function(event) {
+      // console.log("div发生点击",event)
+      //1.偶尔会使用
+      console.log("事件类型:", event.type)
+      console.log("事件所处阶段:", event.eventPhase)
+      //2.比较少用
+      // console.log("事件元素中的位置:", event.offsetX)
+      // console.log("事件元素中的位置:", event.offsetY)
+      // console.log("事件客户端中的位置:", event.clientY)
+      // console.log("事件客户端中的位置:", event.clientY)
+      // console.log("事件客户端中的位置:",event.pageX, event.pageY)
+
+
+      //3.target/currentTarget
+      console.log(event.target)
+      console.log(event.currentTarget)
+      console.log(event.target === event.currentTarget)
+    }
+  </script>
+</body>
+</html>

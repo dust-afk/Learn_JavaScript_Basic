@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    //for 循环
+    // for (var i = 0; i < 3; i++) {
+
+    // }
+
+    //工厂函数(工厂生产student对象)->一种设计模式
+    //通过工厂设计模式,自己定义的这样一个函数
+    function creatStudent(name, age, height) {
+      var stu = {}
+      stu.name = name
+      stu.age = age
+      stu.height = height
+      stu.ruuning = function() {
+        console.log("running")
+      }
+      return stu
+    }
+
+    var stu1 = creatStudent("why", 18, 1.88)
+    var stu2 = creatStudent("Kobe", 30, 1.91)
+    var stu3 = creatStudent("James", 25, 2.05)
+  </script>
+</body>
+</html>

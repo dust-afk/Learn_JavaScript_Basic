@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      border: 10px solid red ;
+      box-sizing: border-box;
+      background-color: orange ;
+      overflow: auto;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    哈哈哈可是我现在依然不太会转弯
+  </div>
+  <script>
+
+    //1.获取样式的局限性很强
+    var boxEl = document.querySelector(".box")
+    // var boxStyle = getComputedStyle(boxEl)
+    // console.log(boxStyle.width, boxStyle.height)
+
+    //2.获取更多信息
+    console.log(boxEl.clientWidth)
+    console.log(boxEl.clientHeight)
+    console.log(boxEl.clientTop)
+
+
+    //3.window
+    window.onclick = function() {
+      console.log(boxEl.scrollTop)
+    }
+
+  </script>
+</body>
+</html>

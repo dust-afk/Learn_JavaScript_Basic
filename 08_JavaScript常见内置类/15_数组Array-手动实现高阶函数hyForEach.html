@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var names = ["abc", "cba"]
+    // //forEach可以帮助我遍历数组
+    // for (var i = 0; i < names.length; i++) {
+    //   console.log(names[i])
+    // }
+
+    //1.版本一:实现hyForEach(掌握)
+    function hyForEach(fn) {
+      for (var i = 0; i < names.length; i++) {
+        fn(names[i], i, names)
+      }
+    }
+
+    hyForEach(function(item, index, names) {
+      console.log("---",item, index, names)
+    })
+
+    names.forEach(function(item, index, names) {
+      console.log("---", item, index, names)
+    })
+
+    //2.版本二
+    // function hyForEach(fn, arr) {
+    //   for (var i = 0; i < names.length; i++) {
+    //     fn(names[i], i, arr)
+    //   }
+    // }
+
+    // hyForEach(function(item, index, names) {
+    //   console.log("---",item, index, names)
+    // })
+    
+    // hyForEach(function(item, index, names) {
+    //   console.log("---",item, index, names)
+    // }, [123, 345, 111, 113])
+
+
+    //3.版本三
+
+    // names.hyForEach = function(fn) {
+      
+    //   for (var i = 0; i < this.length; i++) {
+    //     fn(names[i], i, arr)
+    //   }
+    // }
+    // names.hyForEach(function(item, index, names){
+    //   console.log("----", item, index, names)
+    // })
+
+    
+
+
+
+  </script>
+</body>
+</html>

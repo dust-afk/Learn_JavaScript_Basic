@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="time">2025-11-6 12:19:50</h1>
+  <script>
+    //封装工具函数
+    function padleft(content, count, padStr) {
+      count = count || 2
+      padStr = padStr || "0"
+      content = String(content)
+      return content.padStart(count, padStr)
+
+    }
+
+
+    //1.获取时间元素
+    var timeEl = document.querySelector(".time")
+    
+   setInterval(function() {
+     //2.获取具体的时间并进行格式化
+      var date = new Date()
+      var year = date.getFullYear()
+      var month = padleft(date.getMonth() + 1)
+      var day = padleft(date.getDate())
+      var hour = padleft(date.getHours())
+      var minute = padleft(date.getMinutes())
+      var second = padleft(date.getSeconds())
+      //3.将时间放到timeEl中
+      timeEl.textContent = `${year}-${month}-${day} ${hour}:${minute}:${second}`
+   }, 1000);
+
+    //补充String方法
+    // var str = "124"
+    // console.log(str.padStart(4, "0"))
+  </script>
+</body>
+</html>

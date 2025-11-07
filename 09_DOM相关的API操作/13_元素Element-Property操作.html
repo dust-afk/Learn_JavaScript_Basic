@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 元素中的属性称之为attribute -->
+   <!-- 标准的attribute在对应的对象模型都有对应的property -->
+  <div id="abc" class="box" age="18" title="标题">
+    我是box
+  </div>
+  <input type="checkbox" checked>
+  账号: <input type="text" class="account">
+  <button class="btn">设置input的值</button>
+
+  <script>
+    //对象中的属性称之为property
+    // var obj = {
+    //   //property
+    //   name: "why"
+    // }
+
+    //1.通过property获取attribute的值
+    //获取box元素
+    var boxEl = document.querySelector(".box")
+    console.log(boxEl.id, boxEl.age, boxEl.title)
+
+    //input元素
+    var inputEl = document.querySelector("input")
+    if (inputEl.checked) {
+      console.log("checkbox处于选中状态")
+    }
+    console.log(typeof inputEl.checked)
+
+    //2.两个之间是相互影响的
+    boxEl.id = "aaa"
+    console.log(boxEl.getAttribute("id"))
+
+    boxEl.setAttribute("title", "哈哈哈")
+    console.log(boxEl.title)
+
+    //3.比较特殊情况,给input设置值
+    var accountInputEl = document.querySelector(".account")
+    accountInputEl.value = "coderwhy"
+  
+    var btnEl = document.querySelector(".btn")
+      btnEl.onclick = function () {
+      accountInputEl.setAttribute("value", "kobe")
+    }
+
+  </script>
+</body>
+</html>

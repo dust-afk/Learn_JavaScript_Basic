@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    var date = new Date()
+
+    //1.获取想要的时间信息
+    var year = date.getFullYear()
+    var month = date.getMonth()
+    var day = date.getDate()
+    var hour = date.getHours()
+
+    console.log(year, month + 1, day, hour)
+    console.log(`${year}/${month}/${day}`)
+
+    var weekday = date.getDay() //一周的第几天
+    console.log(weekday)
+
+
+    //2.也可以给date设置时间
+    date.setFullYear(2023)
+    //自动校验
+    date.setDate(32)
+    console.log(date)
+  </script>
+
+
+</body>
+</html>

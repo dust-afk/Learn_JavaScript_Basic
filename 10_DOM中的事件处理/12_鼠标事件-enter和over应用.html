@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      width: 400px;
+      height: 100px;
+      background-color: orange ;
+  
+    }
+
+    .box button {
+      flex: 1;
+      margin: 10px;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    
+    <button>删除</button>
+    <button>新增</button>
+    <button>搜索</button>
+  </div>
+
+  <script>
+    //方案一:监听的本身就是button元素
+    // var btnEls = document.querySelectorAll("button")
+    // for (var btnEl of btnEls) {
+    //   btnEl.onmouseover = function(event) {
+    //     console.log(event.target.textContent)
+    //   }
+    // }
+
+    //方案二:事件委托
+    var boxEl = document.querySelector(".box")
+    boxEl.onmouseover = function(event) {
+      if (event.target.tagName === "BUTTON") {
+      console.log(event.target.textContent)
+      }
+    }
+  </script>
+</body>
+</html>

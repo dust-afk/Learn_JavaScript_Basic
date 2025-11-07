@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var nums = [20, 4, 10, 15, 100, 88]
+
+    //自己写算法:冒泡/插入/快速/希尔/堆排序
+    //sort:排序
+    nums.sort(function(item1, item2) {
+      //item1和item2比较
+      //返回的是 正数
+      //谁小谁在前
+      // return item1 - item2 升序
+      return item2 - item1 //降序
+
+    })
+    console.log(nums)
+    console.log(nums.reverse())
+
+
+    //复杂类型排序
+    var students = [
+      {id: 100, name: "why", age: 18},
+      {id: 101, name: "lilei", age: 20},
+      {id: 102, name: "coder", age: 25},
+      {id: 103, name: "why", age: 30}
+    ]
+    students.sort(function(item1, item2) {
+      return item1.age - item2.age
+    })
+    console.log(students)
+  </script>
+</body>
+</html>

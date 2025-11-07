@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1.数组中存放的是原始类型
+    var names = ["abc", "cba", "nba"]
+
+    //1.1indexOf
+    //可以找到返回索引
+    //不能找到,返回-1
+    console.log(names.indexOf("nba"))
+
+    //2.数组中存放的是对象类型
+    var students = [
+      {id: 100, name: "why", age: 18},
+      {id: 101, name: "why", age: 20},
+      {id: 102, name: "why", age: 25},
+      {id: 103, name: "why", age: 30}
+    ]
+
+    //查找id为101的学生信息
+    //2.1自己写的一个for循环
+    // var stu = null
+    // for (var i = 0; i < students.length; i++) {
+    //   if (students[i].id === 101) {
+    //   stu = students[i]
+    //   break
+    //   }
+    // }
+
+    // //判断上面的算法有没有找到对应的学生
+    // if (stu) {
+    //   console.log("找到了对应学生", stu)
+    // } else {
+    //   console.log("没有找到101学生")
+    // }
+
+    //2.2 find方法: 高阶函数
+    var stu = students.find(function(item) {
+      if(item.id === 101) return true
+    })
+    console.log(stu)
+
+  </script>
+</body>
+</html>

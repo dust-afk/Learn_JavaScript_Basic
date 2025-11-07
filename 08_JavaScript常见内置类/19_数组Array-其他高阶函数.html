@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //forEach函数
+    // var names = ["abc", "cba", "nba"]
+
+    // //三种方式,新增一种方式forEach
+    // names.forEach(function(item) {
+    //   console.log(item, this)})
+
+    // //2.filter函数:过滤
+    // var nums = [11, 20, 55, 100, 88, 32]
+    // //2.1for循环的实现
+    // var newNums = []
+    // for (var item of nums) {
+    //   if (item % 2 === 0) {
+    //     newNums.push(item)
+    //   }
+    // }
+    // console.log(newNums)
+    
+
+    // //2.2filter实现
+    // var newNums = nums.filter(function(item) {
+    //  return item % 2 === 0
+    // })
+
+    // //3.map函数:映射
+    // var newNums = nums.map(function(item) {
+    //   return item * item
+    // })
+    // console.log(newNums)
+
+
+    // //4.reduce
+    // //第一次执行:preValue->0,item->11
+    // //preValue的值是上一次的返回值
+
+    // //initialValue: 初始化值,第一次执行的时候,对应preValue
+    // var result = nums.reduce(function(preValue, item) {
+    //   return preValue + item
+    // }, 0)
+    // console.log(result)
+
+    //reduce练习
+    // var products = [
+    //   {name: "鼠标", price:88, count: 3},
+    //   {name: "鼠标", price:88, count: 3},
+    //   {name: "鼠标", price:88, count: 3},
+    //   {name: "鼠标", price:88, count: 3}
+    // ]
+    // var totalPrice = products.reduce(function(preValue, item) {
+    //   return preValue + item.price * item.count
+    // }, 0)
+    // console.log(totalPrice)
+
+    //综合练习
+  var nums = [11, 20, 55, 100, 88, 32]
+
+  //过滤所有偶数,映射所有偶数的平方,并计算他们的和
+  var total = nums.filter(function(item) {
+    return item % 2 === 0
+  }).map(function(item) {
+    return item * item
+  }).reduce(function(preValue, item) {
+    return preValue + item
+  }, 0)
+  console.log(total)
+  </script>
+</body>
+</html>
