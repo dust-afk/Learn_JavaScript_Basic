@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //案例:
+    //1.获取用户输入的分数
+    var score = Number(prompt("请输入你的分数:"))
+    if (score > 100 || score < 0){
+      alert("你的输入分数超出了正常范围")
+    }
+      else if (score > 90) {
+      alert("优秀")
+    } else if (score > 80) {
+      alert("良好")
+    } else if (score > 60) {
+      alert("合格")
+    } else {
+      alert("不及格")
+    }
+  </script>
+</body>
+</html>

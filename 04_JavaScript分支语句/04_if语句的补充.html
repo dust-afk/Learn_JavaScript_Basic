@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //补充一:如果if语句对应的代码块,只有一行代码,那么{}可以省略
+    //案例二:苹果的单价5元/斤,如果购买数量超过5斤立减8元
+    //1.定义一些变量保存数据
+    var price = 5
+    var weight = 6
+    var totalPrice = price * weight
+    if (weight > 5)
+      totalPrice -= 8    
+    console.log("总价格:", totalPrice)
+
+    //补充二:if(条件判断)
+    var num = 123 //true
+    if (num) {
+      console.log("num的判断代码执行")
+    }
+  </script>
+</body>
+</html>

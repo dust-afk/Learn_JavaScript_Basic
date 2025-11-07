@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //从服务器拿到很多数字
+    var playCount1 = 13678
+    var playCount2 = 56778909
+    var playCount3 = 22532732829322
+
+
+    //封装一个工具函数:对数字进行格式化
+    //10_0000_0000
+    // 语法糖(一种简写或者特殊的写法,这种写法对于原始写法更加方便或者阅读性更强)
+    function formatCount(count) {
+      var result = 0
+      if (count >= 10_0000_0000) {
+        result = Math.floor(count / 1_0000_0000) + "亿"
+      } else if (count >= 10_0000) {
+      result = Math.floor(count / 1_0000) + "万"
+    } else {
+      result = count 
+    }
+    return result
+  }
+    console.log(formatCount(playCount1))
+    console.log(formatCount(playCount2))
+    console.log(formatCount(playCount3))
+    
+
+
+
+
+  </script>
+</body>
+</html>

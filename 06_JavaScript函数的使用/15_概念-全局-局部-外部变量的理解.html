@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1.全局变量(global variables):在全局(script元素中)定义一个变量,那么这个变量在定义之后的任何范围内都可以被访问到,那么这个变量是一个全局变量
+
+    var message = "hello"
+    //在函数中访问message
+    function sayHello() {
+      //在函数内部访问函数之外的变量,访问的变量称之为外部变量(outer variables)
+      console.log("在sayHello中访问message:", message)
+      //2.局部变量:在函数内部定义的变量,只有在函数内部才能进行访问,称之为局部变量
+      var nickname = "coderwhy"
+
+      function hi() {
+        console.log("hi function")
+        //message也是一个外部变量
+        console.log("hi中访问message:", message)
+      }
+      hi()
+    }
+    sayHello()
+  </script>
+</body>
+</html>

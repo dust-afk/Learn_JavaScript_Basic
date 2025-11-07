@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1.作用域的理解:message在哪个范围内可以被使用,称之为message的作用域
+    //全局变量:全局作用域
+    var message = "hello world"
+    if (true) {
+      console.log(message)
+        }
+    function foo() {
+      console.log("在foo中访问",message)
+    }
+    foo()
+
+    //2.ES5之前没有块级作用域(var定义的变量是没有块级作用域的)
+    {
+      var count = 100
+      console.log("在代码块中访问count:", count)
+    }
+    console.log("在代码块外访问count:", count)
+    //for循环的代码块也是没有自己的作用域的
+    for (var i = 0; i < 3; i++) {
+      var foo = "foo"
+    }
+    console.log("for循环外面访问foo:",foo)
+    console.log("for循环外面访问i:", i) //3
+
+
+    //3.ES5之前函数代码块会形成自己的作用域
+    //意味着在函数内部定义的变量外面是访问不到的
+    // function test() {
+    //   var bar = "bar"
+
+    // }
+    // test()
+    // console.log("test函数外访问bar:", bar)
+
+
+    //函数有自己的作用域:函数内部定义的变量只有内部能访问到
+    function sayHello() {
+      var nickname = "kobe"
+      console.log("sayHello函数内部:", nickname)
+      function hi() {
+        console.log("hi function")
+        console.log("在hi函数中访问nickname:", nickname)
+      }
+      hi()
+    }
+    sayHello()
+    // console.log("sayHello外面访问nickname:", nickname)
+  </script>
+</body>
+</html>

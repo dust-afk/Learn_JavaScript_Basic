@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //案例一
+    var num1 = 12 * 8 + 7 **8
+    var num2 = 2*6 + 24 **5
+    //三元运算符
+    var result = num1 > num2 ? num1: num2
+    console.log(result)
+
+    //案例二
+    //给变量赋值一个默认值
+    var info = {
+      name: "why",
+      age: 18
+    }
+    var obj = info ? info: {}
+
+    //案例三:让用户输入一个年龄,判断是否是成年人
+    var age = prompt("请输入你的年龄")
+    age = Number(age)
+    var result = age > 18 ? "成年人":"未成年人"
+    alert (result)
+
+  </script>
+</body>
+</html>

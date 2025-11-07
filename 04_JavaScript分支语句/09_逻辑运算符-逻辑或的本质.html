@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //脱离分支语句,单独使用
+    //1.先将运算元转成Boolean类型
+    //2.对转成的Boolean类型进行判断,如果为true,直接将结果(原类型)返回
+    //如果为false,进行第二个运算元的判断
+    //以此类推
+    //如果找到最后,也没有找到,那么返回最后一个运算元
+
+    //本质推导一:之前的多条件是如何判断的
+    var chineseScore = 88
+    var mathScore = 99
+    //chineseScore > 90 为true,那么后续所有条件都不会进行判断
+    if (chineseScore > 90 || mathScore >90){}
+
+    //本质的推导二:获取第一个有值的结果
+    var info = undefined
+    var obj = {name: "why"}
+    var message = info || obj || "我是默认值"
+    console.log(message.length)
+
+  </script>
+</body>
+</html>

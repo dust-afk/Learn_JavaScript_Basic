@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var names = ["abc", "cba", "nba", "mba", "aaa", "bbb"]
+    //循环遍历数组
+    // for (var i = 0; i < 4; i++) {
+    //   console.log(names[i])
+    //   if (names[i] === "nba") {
+    //     break
+    //   }
+    // }
+
+    //continue关键字的使用:结束本次循环,执行下一次循环
+    //需求:不打印nba
+    for (var i = 0; i < names.length; i++) {
+      if (names[i] === "nba") {
+        continue 
+      }      
+      console.log(names[i])
+    }
+
+
+  </script>
+</body>
+</html>

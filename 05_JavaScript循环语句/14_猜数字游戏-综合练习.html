@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1.随机生成一个0-99的数字
+    var randomNum = Math.floor(Math.random()*100)
+
+    //2.玩家有7次猜测机会
+    // var isSuccess = false
+    var count = 7
+    for (var i = 0; i < count; i++) {
+      //获取用户的数据
+      var inputNum = Number(("请输入你猜测的数字:"))
+      //和randomNum进行比较
+      if (inputNum === randomNum) {
+        alert("恭喜你猜对啦!")
+        isSuccess = true
+        break
+      } else if (inputNum > randomNum) {
+        alert("猜大啦")
+      } else {
+        alert("猜小啦")
+      }
+      if (i === count - 1) {
+        alert("你的次数用完啦")
+      }
+    }
+    // if(!isSuccess) {
+    //   alert("你的机会用完啦")
+    // }
+  </script>
+</body>
+</html>
