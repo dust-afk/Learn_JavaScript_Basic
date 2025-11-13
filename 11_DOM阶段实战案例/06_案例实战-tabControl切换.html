@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-main-news</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .section-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main .section-content .left-content {
+      width: 872px;
+      height: 1000px;
+
+
+    }
+    .main .section-content .right-content {
+      width: 295px;
+      height: 500px;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="main main_wrapper">
+    <div class="section-content">
+      <div class="left-content">
+        <div class="content-center">
+          <div class="section_header">
+            <div class="header_left">
+              <h3 class="title">内容中心</h3>
+            </div>
+            <div class="header_right">
+              <a class="more" href="#">更多</a>
+            </div>
+          </div>
+        </div>
+        <div class="tab_control">
+          <a class="item active" href="#">精品栏目</a>
+          <div class="line"></div>
+          <a class="item" href="#">赛事精品</a>
+          <div class="line"></div>
+          <a class="item" href="#">英雄攻略</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //1.获取元素
+    var tabControl = document.querySelector(".tab_control")
+
+    //2.监听鼠标进入(事件委托)
+    var activeLiEl = tabControl.querySelector(".active")
+    tabControl.onmouseover = function(event) {
+      //1.拿到事件发生对象
+      var itemEl = event.target
+      if (itemEl.classList.contains("item")) {
+
+        //其他取消active
+        //1.forxunhuan
+        //2.querySelector(".active")
+        //3.记录当前active对应的item
+        activeLiEl.classList.remove("active")
+        
+        //当前进入item,变成active
+        itemEl.classList.add("active")
+
+        //将最新的itemEl变成activeEl
+        activeLiEl = itemEl
+      }
+    }
+  </script>
+</body>
+</html>

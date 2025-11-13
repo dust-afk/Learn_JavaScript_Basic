@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+
+  <script>
+    //1.获取元素
+    var topBar = document.querySelector(".top-bar")
+    var deleteEl = topBar.querySelector(".delete")
+
+
+    //2.监听delete的点击
+    deleteEl.onclick = function() {
+      topBar.style.height = 0
+    }
+
+    topBar.ontransitionend = function() {
+      topBar.remove()
+    }
+  </script>
+</body>
+</html>

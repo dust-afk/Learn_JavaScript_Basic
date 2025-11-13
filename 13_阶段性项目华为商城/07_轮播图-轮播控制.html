@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+
+
+    .banner .images {
+      position: relative;
+      height: 550px;
+    }
+
+    .banner .images .item {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      opacity: 0;
+      transition: opcity 1000ms ease;
+    }
+    .banner .images .item.active {
+      opacity: 1;
+    }
+    .banner .images .item img {
+      position: relative;
+      transform: translate(-50%);
+      left: 50%;
+      width: 1920px;
+      height: 550px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <ul class="images">
+
+      <li class="item active">
+        <img src="./img/banner_01.jpg" alt="">
+      </li>
+      
+      
+      <li class="item">
+        <img src="./img/banner_01.jpg" alt="">
+      </li>
+      
+      <li class="item">
+        <img src="./img/banner_01.jpg" alt="">
+      </li>
+      <li class="item">
+        <img src="./img/banner_01.jpg" alt="">
+      </li>
+    </ul>
+    <div class="control">
+      <button class="prev">上一个</button>
+      <button class="next">下一个</button>
+    </div>
+    <div class="indicator"></div>
+  </div>
+
+  <script>
+    var bannersCount = banners.length
+    //0 banner的serverURL
+    var bannerServerURL = "http://res.vmallres.com/"
+    //1.动态添加轮播图图片数据
+    var imagesEl = document.querySelector(".images")
+    var activeItemEl = null
+    for (var i = 0; i < banners.length; i++) {
+      //1.获取数据
+      var banners = banners[i]
+      //创建li
+      var itemEl = document.createElement("li")
+      itemEl.classList.add("item")
+      if (i === 0) {
+        itemEl.classList.add("active")
+        activeItemEl = itemEl
+      }
+      imagesEl.append(itemEl)
+
+      //创建img
+      var imgEl = document.createElement("img")
+      imgEl.src`${bannerServerURL}${banner.imgUrl}`
+      itemEl.append(imgEl)
+    }
+
+    //2.监听按钮的点击
+    var previousIndex = 0
+    var currentIndex = 0
+    var controlEl = document.querySelector(".control")
+    var prevBtnEl = controlEl.querySelector(".prev")
+    var nextBtnEl = controlEl.querySelector(".next")
+    prevBtnEl.onclick = function() {
+      //找到上一个
+      previousIndex = currentIndex
+      currentIndex--
+      if (currentIndex === -1) {
+        currentIndex = bannersCount - 1
+      }
+      switchBannerItem()
+    }
+    nextBtnEl.onclick = function() {
+      //找到下一个
+      previousIndex = currentIndex
+      currentIndex++
+      if (currentIndex === bannersCount) {
+        currentIndex = 0
+      }
+      //让currentIndex变成active状态.让previous变成普通状态
+      switchBannerItem()
+    }
+
+
+    //封装函数:切换switchBannerItem
+    function switchBannerItem() {
+      var currentItemEl = imagesEl.children[currentIndex]
+      var previousItemEl = imagesEl.children[previousIndex]
+      previousItemEl.classList.remove("active")
+      currentItemEl.classList.add("active")
+    }
+  </script>
+</body>
+</html>

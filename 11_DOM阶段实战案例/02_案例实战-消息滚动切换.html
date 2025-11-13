@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="tip-bar">
+    <img src="" alt="">
+    <span>187***124对这件商品感兴趣</span>
+  </div>
+  <script>
+    //1.从服务器拿到数据ajax/fetch请求
+
+
+    //2.动态切换数据
+    //2.1获取元素
+    var tipBar = document.querySelector(".tip-bar")
+    var imgEl = tipBar.querySelector("img")
+    var spanEl = tipBar.querySelector("span")
+
+    //2.2三秒切换一次数据
+    var currentIndex = 0    //记录当前展示的索引位置
+    setInterval(function() {
+      //1>根据索引获取item
+      var tipItem = tipList[currentIndex]
+
+      //2>给DOM设置内容
+      imgEl.src = tipItem.icon
+      spanEl.textContent = tipItem.title
+
+      //3>重新计算索引
+      currentIndex++
+      if(currentIndex === tipList.length) {
+        currentIndex = 0
+      }      
+    }, 3000)
+
+
+
+  </script>
+</body>
+</html>
